@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { BrowserRouter as Router, Routes, Route, NavLink, BrowserRouter } from "react-router-dom"
 import SlideRoutes from "react-slide-routes";
 import { styled } from "styled-components";
@@ -6,12 +6,12 @@ import Home from "../pages/Home";
 import PropTypes from "prop-types"
 import Progression from "../pages/Progress";
 import Message from "../pages/Messages";
-import Setting from "../pages/Setting";
+import Custom from "../pages/Custom";
 
 const StyledPage = styled.div`
     display: grid;
     grid-template-columns: 0.2fr 0.8fr;
-    background-color: #302b63;
+    background-color: #5B49A9;
     width: 100vw;
     height: 100vh;
     position: relative;
@@ -46,7 +46,7 @@ const StyledNavBar =styled.div`
 `
 const StyledBorderDivTop = styled.div`
     //border: 1px solid white;
-    background-color: #302b63;
+    background-color: #5B49A9;
     padding: 25px;
     width: 146.5%;
     border-radius: 0px 20px 20px 0px;
@@ -54,7 +54,7 @@ const StyledBorderDivTop = styled.div`
 `
 const StyledBorderDivBottom = styled.div`
     //border: 1px solid white;
-    background-color: #302b63;
+    background-color: #5B49A9;
     padding: 25px;
     width: 146.5%;
     border-radius: 0px 20px 20px 0px;
@@ -62,9 +62,9 @@ const StyledBorderDivBottom = styled.div`
 `
 const StyledSlideDiv = styled.div`
     position: absolute;
-    top: ${({ navBar }) => {
-        console.log(navBar)
-        switch (navBar) {
+    top: ${({ position }) => {
+        console.log(position)
+        switch (position) {
             case 1:
                 return "35px";
             case 2:
@@ -95,7 +95,7 @@ const StyledNavLink1 = styled(NavLink)`
     margin-left: -20px;
     padding: 5px 0px 5px 25px;
     border-radius: 0px 20px 20px 0px;
-    background-color: #302b63;
+    background-color: #5B49A9;
     z-index: 2;
     &.active{
         border-radius: 20px;
@@ -112,7 +112,7 @@ const StyledNavLink2 = styled(NavLink)`
     margin-left: -20px;
     padding: 5px 0px 5px 25px;
     border-radius: 0px 20px 20px 0px;
-    background-color: #302b63;
+    background-color: #5B49A9;
     z-index: 2;
     &.active{
         border-radius: 20px;
@@ -129,7 +129,7 @@ const StyledNavLink3 = styled(NavLink)`
     margin-left: -20px;
     padding: 5px 0px 5px 25px;
     border-radius: 0px 20px 20px 0px;
-    background-color: #302b63;
+    background-color: #5B49A9;
     z-index: 2;
     &.active{
         border-radius: 20px;
@@ -145,7 +145,7 @@ const StyledNavLink4 = styled(NavLink)`
     margin-left: -20px;
     padding: 5px 0px 5px 25px;
     border-radius: 0px 20px 20px 0px;
-    background-color: #302b63;
+    background-color: #5B49A9;
     z-index: 2;
     &.active{
         border-radius: 20px;
@@ -155,14 +155,14 @@ const StyledNavLink4 = styled(NavLink)`
 `
 const StyledE = styled.div`
     padding: 10px 20px 10px 20px;
-    background-color: blue;
+    background-color: #6553B2;
     border-radius: 20px;
 `
 function Navbar(){
 
     // I need to add 40 to the top value to switch to the next menu
-    const [navBar, setNavBar] = useState(1);
-
+    const [navbar, setNavBar] = useState(1);
+    
     function handleClick(value){
         setNavBar(value);
         console.log(value);
@@ -177,22 +177,22 @@ function Navbar(){
                     </StyledName>
 
                     <StyledNavBar>
-                        <StyledSlideDiv navBar={navBar}></StyledSlideDiv>
+                        <StyledSlideDiv position={navbar}></StyledSlideDiv>
                         <StyledBorderDivTop></StyledBorderDivTop>
                         <StyledNavLink1 onClick={() => {handleClick(1)}} className="link" to={"/"}><StyledP>Home</StyledP></StyledNavLink1>
                         <StyledNavLink2 onClick={() => {handleClick(2)}} className="link" to={"/progress"}><StyledP>Progress</StyledP></StyledNavLink2>
                         <StyledNavLink3 onClick={() => {handleClick(3)}} className="link" to={"/messages"}><StyledP>Messages</StyledP></StyledNavLink3>
-                        <StyledNavLink4 onClick={() => {handleClick(4)}} className="link" to={"/settings"}><StyledP>Settings</StyledP></StyledNavLink4>
+                        <StyledNavLink4 onClick={() => {handleClick(4)}} className="link" to={"/custom"}><StyledP>Custom</StyledP></StyledNavLink4>
                         <StyledBorderDivBottom></StyledBorderDivBottom>
                     </StyledNavBar>
                 </StyleContainDiv2>
 
                 <StyleContainDiv>
-                    <SlideRoutes animation="vertical-slide">
+                    <SlideRoutes animation="vertical-slide" duration={800}>
                         <Route path="/" element={<Home />} />
                         <Route path="/progress" element={<Progression />} />
                         <Route path="/messages" element={<Message />} />
-                        <Route path="/settings" element={<Setting />} />
+                        <Route path="/custom" element={<Custom />} />
                     </SlideRoutes>
                 </StyleContainDiv>
             </StyledPage>
@@ -201,7 +201,7 @@ function Navbar(){
 }
 
 Navbar.propTypes = {
-    navBar : PropTypes.number
+    position : PropTypes.number
 }
 
 export default Navbar;
