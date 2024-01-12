@@ -4,21 +4,21 @@ import SlideRoutes from "react-slide-routes";
 import { styled } from "styled-components";
 import Home from "../pages/Home";
 import PropTypes from "prop-types"
-import Progress from "../pages/Progress";
+import Progression from "../pages/Progress";
 import Message from "../pages/Messages";
 import Setting from "../pages/Setting";
 
 const StyledPage = styled.div`
     display: grid;
     grid-template-columns: 0.2fr 0.8fr;
-    background-color: black;
+    background-color: #302b63;
     width: 100vw;
     height: 100vh;
     position: relative;
     padding-left: 10px;
 `
 const StyleContainDiv = styled.div`
-    margin: 10px 10px 10px 0px;
+    margin: 20px 10px 20px 0px;
     background-color: white;
     border-radius: 40px;
 `
@@ -46,7 +46,7 @@ const StyledNavBar =styled.div`
 `
 const StyledBorderDivTop = styled.div`
     //border: 1px solid white;
-    background-color: black;
+    background-color: #302b63;
     padding: 25px;
     width: 146.5%;
     border-radius: 0px 20px 20px 0px;
@@ -54,7 +54,7 @@ const StyledBorderDivTop = styled.div`
 `
 const StyledBorderDivBottom = styled.div`
     //border: 1px solid white;
-    background-color: black;
+    background-color: #302b63;
     padding: 25px;
     width: 146.5%;
     border-radius: 0px 20px 20px 0px;
@@ -95,12 +95,12 @@ const StyledNavLink1 = styled(NavLink)`
     margin-left: -20px;
     padding: 5px 0px 5px 25px;
     border-radius: 0px 20px 20px 0px;
-    background-color: black;
+    background-color: #302b63;
     z-index: 2;
     &.active{
         border-radius: 20px;
         background-color: white;
-        color: black;
+        color: orange;
         transition: 0.5s;
     }
 `
@@ -112,12 +112,12 @@ const StyledNavLink2 = styled(NavLink)`
     margin-left: -20px;
     padding: 5px 0px 5px 25px;
     border-radius: 0px 20px 20px 0px;
-    background-color: black;
+    background-color: #302b63;
     z-index: 2;
     &.active{
         border-radius: 20px;
         background-color: white;
-        color: black;
+        color: orange;
         transition: 0.5s;
     }
 `
@@ -129,12 +129,12 @@ const StyledNavLink3 = styled(NavLink)`
     margin-left: -20px;
     padding: 5px 0px 5px 25px;
     border-radius: 0px 20px 20px 0px;
-    background-color: black;
+    background-color: #302b63;
     z-index: 2;
     &.active{
         border-radius: 20px;
         background-color: white;
-        color: black;
+        color: orange;
     }
 `
 const StyledNavLink4 = styled(NavLink)`
@@ -145,16 +145,16 @@ const StyledNavLink4 = styled(NavLink)`
     margin-left: -20px;
     padding: 5px 0px 5px 25px;
     border-radius: 0px 20px 20px 0px;
-    background-color: black;
+    background-color: #302b63;
     z-index: 2;
     &.active{
         border-radius: 20px;
         background-color: white;
-        color: black;
+        color: orange;
     }
 `
 const StyledE = styled.div`
-    padding: 10px;
+    padding: 10px 20px 10px 20px;
     background-color: blue;
     border-radius: 20px;
 `
@@ -190,7 +190,7 @@ function Navbar(){
                 <StyleContainDiv>
                     <SlideRoutes animation="vertical-slide">
                         <Route path="/" element={<Home />} />
-                        <Route path="/progress" element={<Progress />} />
+                        <Route path="/progress" element={<Progression />} />
                         <Route path="/messages" element={<Message />} />
                         <Route path="/settings" element={<Setting />} />
                     </SlideRoutes>

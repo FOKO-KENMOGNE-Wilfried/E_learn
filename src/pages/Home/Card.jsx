@@ -12,12 +12,14 @@ const StyledSubSubBox = styled.div`
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
+    font-weight: bold;
 `
 const StyledTop = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    gap: 350px;
+    margin-left: 400px;
+    //gap: 450px;
     z-index: 2;
 `
 const StyledBottom =styled.div`
@@ -34,7 +36,7 @@ const StyledBackImg =styled.img`
     position: absolute;
     width: 100%;
     height: 100%;
-    border-radius: 20px;;
+    border-radius: 20px;
 `
 const StyledTime = styled.div`
     padding: 10px 30px 10px 30px;
@@ -48,7 +50,7 @@ function Card({image, text, label}){
         <StyledSubSubBox>
             <StyledBackImg src={image} alt="" />
             <StyledTop>
-                <img src="" alt="photo-1" />
+                {/* <img src="" alt="photo-1" /> */}
                 <StyledTime>{text}</StyledTime>
             </StyledTop>
             <StyledBottom>
