@@ -3,7 +3,9 @@ import notification from "../../assets/logo/notification.png";
 import user from "../../assets/logo/user.png";
 import loop from "../../assets/logo/loop.png";
 import react from "../../assets/img/React.png";
-import ProgressBar from "@ramonak/react-progress-bar";
+import face from "../../assets/logo/face.png";
+import file from "../../assets/logo/file.jpg";
+import Card from "./Card";
 
 const StyledPage = styled.div`
     display : flex;
@@ -64,11 +66,12 @@ const StyledBackImg =styled.img`
 const StyledBloc1 = styled.div`
     display: flex;
     flex-direction: row;
-    gap: 10px;
+    gap: 40px;
 `
 const StyledBloc2 = styled.div`
     display: flex;
     flex-direction: row;
+    gap: 100px;
 `
 const StyledSubBloc1 = styled.div`
     display: flex;
@@ -84,9 +87,41 @@ const StyledSubBloc2 = styled.div`
 const StyledSubSubBloc2 = styled.div`
     display: flex;
     flex-direction: row;
+    align-items: center;
     gap: 30px;
 `
-function Custom(){
+const StyledImg = styled.img`
+    width: 50px;
+    height: 50px;
+`
+const StyledDiv = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    border-radius: 20px;
+    width: 6vw;
+    background-color: #FBC5B1;
+    font-size: 1.5em;
+`
+const StyledDivContainer = styled.div`
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 10px;
+`
+const StyledFile = styled.img`
+    width: 30px;
+    height: 30px;
+`
+const StyledContent = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 40px;
+`
+
+function Course(){
     return (
         <StyledPage>
 
@@ -100,9 +135,10 @@ function Custom(){
                 <StyledLogo src={notification} alt="notification" />
             </StyledUtils>
         </StyledBox1>
+
         <StyledBloc1>
             <StyledSubBloc1>
-                <p>Course-Simple Swift App</p>
+                <p style={{fontSize: 2 + "em"}}>Course-Simple Swift App</p>
                 <StyledSubSubBox>
                     <StyledBackImg src={react} alt="" />
                     {/* <StyledBottom>
@@ -110,53 +146,52 @@ function Custom(){
                     </StyledBottom> */}
                 </StyledSubSubBox>
             </StyledSubBloc1>
-            <div>
-                <p>Lesson</p>
-                <div>
-                    <div>One</div>
-                    <div>Two</div>
-                </div>
-            </div>
+
+            <StyledSubBloc1>
+                <p style={{fontSize: 2 + "em"}}>Lessons</p>
+                <StyledContent>
+                    <Card label={"How is React ?"} texte={"Lesson 4 - 6min"}/>
+                    <Card label={"Use Create React App"} texte={"Lesson 5 - 10min"}/>
+                    <Card label={"Create Your First Component"} texte={"Lesson 6 - 8min"}/>
+                    <Card label={"Manage Your States"} texte={"Lesson 7 - 15min"}/>
+                    <Card label={"Use The Hooks"} texte={"Lesson 8 - 10min"}/>
+                </StyledContent>
+            </StyledSubBloc1>
         </StyledBloc1>
+
         <StyledBloc2>
             <StyledSubBloc2>
                 <StyledSubSubBloc2>
-                    <img src="" alt="photo" />
+                    <StyledImg src={face} alt="photo" />
                     <div>
-                        <p>Lesson 1 - HTML5 CSS3</p>
-                        <p>@human</p>
+                        <p style={{fontSize: 1.5 + "em"}}>Lesson 1 - HTML5 CSS3</p>
+                        <p style={{opacity: 0.5}}>@human</p>
                     </div>
                 </StyledSubSubBloc2>
-                <div>
+
+                <div style={{fontSize: 1.7 + "em"}}>
                     Lorem ipsum dolor, sit amet consectetur adipisicing 
                     elit. Et repellat numquam repellendus nesciunt ut 
                     consequatur deserunt culpa aspernatur, explicabo 
-                    eveniet esse delectus, quo doloribus. Odio earum ad 
-                    consequatur illum debitis ipsa mollitia sunt laborum. 
-                    Quod saepe ex nobis accusamus, consequatur iusto quaerat 
-                    nam eius ad eveniet doloremque blanditiis expedita 
-                    excepturi minus, sunt distinctio enim dolorem beatae 
-                    at eos accusantium ab? Cumque aut excepturi provident 
-                    quos eum, minus voluptates tempore quas voluptatem 
-                    dolorem animi consequatur incidunt veritatis nobis 
-                    dolorum inventore! Laudantium minima deserunt ex 
-                    accusamus blanditiis provident inventore dolorem 
-                    aspernatur laborum, officia illum, minus cumque 
-                    molestiae labore voluptas nemo unde optio.
+                    eveniet esse delectus, quo doloribus. Odio earum ad.
                 </div>
+
             </StyledSubBloc2>
-            <div>
-                <div>
-                    <img src="" alt="icon" />
-                </div>
-                <div>
-                    4+
-                </div>
-            </div>
+
+            <StyledDivContainer>
+                <StyledDiv>
+                    <StyledFile src={file} alt="icon" />
+                </StyledDiv>
+                <StyledDiv>
+                    <p>
+                        4+
+                    </p>
+                </StyledDiv>
+            </StyledDivContainer>
         </StyledBloc2>
 
     </StyledPage>
     )
 }
 
-export default Custom;
+export default Course;

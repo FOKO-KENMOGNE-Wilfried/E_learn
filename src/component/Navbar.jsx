@@ -5,8 +5,8 @@ import { styled } from "styled-components";
 import Home from "../pages/Home";
 import PropTypes from "prop-types"
 import Progression from "../pages/Progress";
-import Message from "../pages/Messages";
-import Custom from "../pages/Custom";
+import Comment from "../pages/Comment";
+import Course from "../pages/Course";
 
 const StyledPage = styled.div`
     display: grid;
@@ -77,7 +77,6 @@ const StyledSlideDiv = styled.div`
                 return "35px";
         }
     }};
-    transition: top 0.5s ease-in-out;
     background-color: white;
     padding: 45px;
     height: 30px;
@@ -101,7 +100,6 @@ const StyledNavLink1 = styled(NavLink)`
         border-radius: 20px;
         background-color: white;
         color: orange;
-        transition: 0.5s;
     }
 `
 const StyledNavLink2 = styled(NavLink)`
@@ -118,7 +116,6 @@ const StyledNavLink2 = styled(NavLink)`
         border-radius: 20px;
         background-color: white;
         color: orange;
-        transition: 0.5s;
     }
 `
 const StyledNavLink3 = styled(NavLink)`
@@ -180,9 +177,9 @@ function Navbar(){
                         <StyledSlideDiv position={navbar}></StyledSlideDiv>
                         <StyledBorderDivTop></StyledBorderDivTop>
                         <StyledNavLink1 onClick={() => {handleClick(1)}} className="link" to={"/"}><StyledP>Home</StyledP></StyledNavLink1>
-                        <StyledNavLink2 onClick={() => {handleClick(2)}} className="link" to={"/progress"}><StyledP>Progress</StyledP></StyledNavLink2>
-                        <StyledNavLink3 onClick={() => {handleClick(3)}} className="link" to={"/messages"}><StyledP>Messages</StyledP></StyledNavLink3>
-                        <StyledNavLink4 onClick={() => {handleClick(4)}} className="link" to={"/custom"}><StyledP>Custom</StyledP></StyledNavLink4>
+                        <StyledNavLink4 onClick={() => {handleClick(2)}} className="link" to={"/course"}><StyledP>Course</StyledP></StyledNavLink4>
+                        <StyledNavLink2 onClick={() => {handleClick(3)}} className="link" to={"/progress"}><StyledP>Progress</StyledP></StyledNavLink2>
+                        <StyledNavLink3 onClick={() => {handleClick(4)}} className="link" to={"/comment"}><StyledP>Comment</StyledP></StyledNavLink3>
                         <StyledBorderDivBottom></StyledBorderDivBottom>
                     </StyledNavBar>
                 </StyleContainDiv2>
@@ -190,9 +187,9 @@ function Navbar(){
                 <StyleContainDiv>
                     <SlideRoutes animation="vertical-slide" duration={800}>
                         <Route path="/" element={<Home />} />
+                        <Route path="/course" element={<Course />} />
                         <Route path="/progress" element={<Progression />} />
-                        <Route path="/messages" element={<Message />} />
-                        <Route path="/custom" element={<Custom />} />
+                        <Route path="/comment" element={<Comment />} />
                     </SlideRoutes>
                 </StyleContainDiv>
             </StyledPage>
