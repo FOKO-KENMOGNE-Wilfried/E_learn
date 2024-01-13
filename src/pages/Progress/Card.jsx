@@ -12,7 +12,7 @@ const StyledProgressBox = styled.div`
     background-color: #E8E8E8;
     height: 150px;
     border-radius: 20px;
-    font-size: 2.5em;
+    font-size: 1.7em;
 `
 const StyledP = styled.p`
     margin-left: 50px;
@@ -24,7 +24,7 @@ function Card({course, value}){
     return (
         <StyledProgressBox>
             <StyledP>{course}</StyledP>
-            <StyledProgress completed={value} height="30px" width="600px" bgColor="#E88021" baseBgColor="black" />
+            <StyledProgress completed={value} height="30px" width="600px" bgColor="#503E9D" baseBgColor="white" />
         </StyledProgressBox>
     )
 }

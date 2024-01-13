@@ -9,7 +9,7 @@ const StyledPage = styled.div`
     padding-left: 80px;
     gap: 40px;
     margin: 35px 0px 0px 20px;
-    font-size: 2em;
+    font-size: 1.7em;
 `
 const StyledP = styled.p`
     background-color: #D9D9D9;

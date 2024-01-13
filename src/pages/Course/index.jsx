@@ -138,7 +138,7 @@ function Course(){
 
         <StyledBloc1>
             <StyledSubBloc1>
-                <p style={{fontSize: 2 + "em"}}>Course-Simple Swift App</p>
+                <p style={{fontSize: 1.7 + "em"}}>Course-Simple Swift App</p>
                 <StyledSubSubBox>
                     <StyledBackImg src={react} alt="" />
                     {/* <StyledBottom>
@@ -148,7 +148,7 @@ function Course(){
             </StyledSubBloc1>
 
             <StyledSubBloc1>
-                <p style={{fontSize: 2 + "em"}}>Lessons</p>
+                <p style={{fontSize: 1.7 + "em"}}>Lessons</p>
                 <StyledContent>
                     <Card label={"How is React ?"} texte={"Lesson 4 - 6min"}/>
                     <Card label={"Use Create React App"} texte={"Lesson 5 - 10min"}/>
@@ -173,7 +173,6 @@ function Course(){
                     Lorem ipsum dolor, sit amet consectetur adipisicing 
                     elit. Et repellat numquam repellendus nesciunt ut 
                     consequatur deserunt culpa aspernatur, explicabo 
-                    eveniet esse delectus, quo doloribus. Odio earum ad.
                 </div>
 
             </StyledSubBloc2>

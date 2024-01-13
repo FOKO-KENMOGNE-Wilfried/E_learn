@@ -99,7 +99,7 @@ const StyledNavLink1 = styled(NavLink)`
     &.active{
         border-radius: 20px;
         background-color: white;
-        color: orange;
+        color: #503E9D;
     }
 `
 const StyledNavLink2 = styled(NavLink)`
@@ -124,7 +124,7 @@ const StyledNavLink2 = styled(NavLink)`
     &.active{
         border-radius: 20px;
         background-color: white;
-        color: orange;
+        color: #503E9D;
     }
 `
 const StyledNavLink3 = styled(NavLink)`
@@ -151,7 +151,7 @@ const StyledNavLink3 = styled(NavLink)`
     &.active{
         border-radius: 20px;
         background-color: white;
-        color: orange;
+        color: #503E9D;
     }
 `
 const StyledNavLink4 = styled(NavLink)`
@@ -174,7 +174,7 @@ const StyledNavLink4 = styled(NavLink)`
     &.active{
         border-radius: 20px;
         background-color: white;
-        color: orange;
+        color: #503E9D;
     }
 `
 const StyledE = styled.div`

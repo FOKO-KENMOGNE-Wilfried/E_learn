@@ -47,7 +47,7 @@ const StyledSubBox3 = styled.div`
     align-items: center;
 `
 const StyledP = styled.p`
-    font-size: 2em;
+    font-size: 1.7em;
 `
 const StyledInput = styled.input`
     width: 40vw;

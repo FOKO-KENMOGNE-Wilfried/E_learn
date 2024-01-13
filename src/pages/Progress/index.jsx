@@ -13,7 +13,7 @@ const StyledPage = styled.div`
 const StyledDiv =styled.div`
     border-bottom: 1px solid black;
     width: 95%;
-    font-size: 2em;
+    font-size: 1.7em;
 `
 const StyledProgression = styled.div`
     display: flex;
