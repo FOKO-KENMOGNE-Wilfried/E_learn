@@ -25,9 +25,9 @@ const StyleContainDiv = styled.div`
 const StyleContainDiv2 = styled.div`
     display: flex;
     flex-direction: column;
+    align-items: start;
     margin-top: 10px;
     margin-bottom: 10px;
-    margin-right: 10px;
     padding: 80px;
     gap: 120px;
     font-size: 2em;
@@ -43,45 +43,38 @@ const StyledNavBar =styled.div`
     position: relative;
     display: flex;
     flex-direction: column;
+    width: 139.5%;
+    background-color: white;
 `
 const StyledBorderDivTop = styled.div`
     //border: 1px solid white;
     background-color: #5B49A9;
     padding: 25px;
-    width: 146.5%;
-    border-radius: 0px 20px 20px 0px;
+    border-radius: ${({ position }) => {
+        console.log(position)
+        switch (position) {
+            case 1:
+                return "0px 0px 20px 0px";
+            default:
+                return "0px 0px 0px 0px";
+        }
+    }};
     z-index: 3;
 `
 const StyledBorderDivBottom = styled.div`
     //border: 1px solid white;
     background-color: #5B49A9;
     padding: 25px;
-    width: 146.5%;
-    border-radius: 0px 20px 20px 0px;
-    z-index: 3;
-`
-const StyledSlideDiv = styled.div`
-    position: absolute;
-    top: ${({ position }) => {
+    border-radius: ${({ position }) => {
         console.log(position)
         switch (position) {
-            case 1:
-                return "35px";
-            case 2:
-                return "75px";
-            case 3:
-                return "125px";
             case 4:
-                return "175px";
+                return "0px 20px 0px 0px";
             default:
-                return "35px";
+                return "0px 0px 0px 0px";
         }
     }};
-    background-color: white;
-    padding: 45px;
-    height: 30px;
-    width: 146.5%;
-    z-index: 2;
+    z-index: 3;
 `
 const StyledP = styled.p`
     z-index: 2;
@@ -90,10 +83,17 @@ const StyledNavLink1 = styled(NavLink)`
     //border: 1px solid white;
     text-decoration: none;
     color: white;
-    width: 156.8%;
     margin-left: -20px;
     padding: 5px 0px 5px 25px;
-    border-radius: 0px 20px 20px 0px;
+    border-radius: ${({ position }) => {
+        console.log(position)
+        switch (position) {
+            case 2:
+                return "0px 0px 20px 0px";
+            default:
+                return "0px 0px 0px 0px";
+        }
+    }};
     background-color: #5B49A9;
     z-index: 2;
     &.active{
@@ -106,10 +106,19 @@ const StyledNavLink2 = styled(NavLink)`
     //border: 1px solid white;
     text-decoration: none;
     color: white;
-    width: 156.8%;
     margin-left: -20px;
     padding: 5px 0px 5px 25px;
-    border-radius: 0px 20px 20px 0px;
+    border-radius: ${({ position }) => {
+        console.log(position)
+        switch (position) {
+            case 1:
+                return "0px 20px 0px 0px";
+            case 3:
+                return "0px 0px 20px 0px";
+            default:
+                return "0px 0px 0px 0px";
+        }
+    }};
     background-color: #5B49A9;
     z-index: 2;
     &.active{
@@ -122,10 +131,21 @@ const StyledNavLink3 = styled(NavLink)`
     //border: 1px solid white;
     text-decoration: none;
     color: white;
-    width: 156.8%;
     margin-left: -20px;
     padding: 5px 0px 5px 25px;
-    border-radius: 0px 20px 20px 0px;
+    border-radius: ${({ position }) => {
+        console.log(position)
+        switch (position) {
+            case 2:
+                return "0px 20px 0px 0px";
+            case 3:
+                return "0px 0px 20px 20px";
+            case 4:
+                return "0px 0px 20px 0px";
+            default:
+                return "0px 0px 0px 0px";
+        }
+    }};
     background-color: #5B49A9;
     z-index: 2;
     &.active{
@@ -138,10 +158,17 @@ const StyledNavLink4 = styled(NavLink)`
     //border: 1px solid white;
     text-decoration: none;
     color: white;
-    width: 156.8%;
     margin-left: -20px;
     padding: 5px 0px 5px 25px;
-    border-radius: 0px 20px 20px 0px;
+    border-radius: ${({ position }) => {
+        console.log(position)
+        switch (position) {
+            case 3:
+                return "0px 20px 0px 0px";
+            default:
+                return "0px 0px 0px 0px";
+        }
+    }};
     background-color: #5B49A9;
     z-index: 2;
     &.active{
@@ -174,13 +201,13 @@ function Navbar(){
                     </StyledName>
 
                     <StyledNavBar>
-                        <StyledSlideDiv position={navbar}></StyledSlideDiv>
-                        <StyledBorderDivTop></StyledBorderDivTop>
-                        <StyledNavLink1 onClick={() => {handleClick(1)}} className="link" to={"/"}><StyledP>Home</StyledP></StyledNavLink1>
-                        <StyledNavLink2 onClick={() => {handleClick(2)}} className="link" to={"/course"}><StyledP>Course</StyledP></StyledNavLink2>
-                        <StyledNavLink3 onClick={() => {handleClick(3)}} className="link" to={"/progress"}><StyledP>Progress</StyledP></StyledNavLink3>
-                        <StyledNavLink4 onClick={() => {handleClick(4)}} className="link" to={"/comment"}><StyledP>Comment</StyledP></StyledNavLink4>
-                        <StyledBorderDivBottom></StyledBorderDivBottom>
+                        {/* <StyledSlideDiv position={navbar}></StyledSlideDiv> */}
+                        <StyledBorderDivTop position={navbar}></StyledBorderDivTop>
+                        <StyledNavLink1 onClick={() => {handleClick(1)}} className="link" to={"/"} position={navbar}><StyledP>Home</StyledP></StyledNavLink1>
+                        <StyledNavLink2 onClick={() => {handleClick(2)}} className="link" to={"/course"} position={navbar}><StyledP>Course</StyledP></StyledNavLink2>
+                        <StyledNavLink3 onClick={() => {handleClick(3)}} className="link" to={"/progress"} position={navbar}><StyledP>Progress</StyledP></StyledNavLink3>
+                        <StyledNavLink4 onClick={() => {handleClick(4)}} className="link" to={"/comment"} position={navbar}><StyledP>Comment</StyledP></StyledNavLink4>
+                        <StyledBorderDivBottom position={navbar}></StyledBorderDivBottom>
                     </StyledNavBar>
                 </StyleContainDiv2>
 
