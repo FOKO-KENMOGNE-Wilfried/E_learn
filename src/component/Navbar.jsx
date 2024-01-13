@@ -177,9 +177,9 @@ function Navbar(){
                         <StyledSlideDiv position={navbar}></StyledSlideDiv>
                         <StyledBorderDivTop></StyledBorderDivTop>
                         <StyledNavLink1 onClick={() => {handleClick(1)}} className="link" to={"/"}><StyledP>Home</StyledP></StyledNavLink1>
-                        <StyledNavLink4 onClick={() => {handleClick(2)}} className="link" to={"/course"}><StyledP>Course</StyledP></StyledNavLink4>
-                        <StyledNavLink2 onClick={() => {handleClick(3)}} className="link" to={"/progress"}><StyledP>Progress</StyledP></StyledNavLink2>
-                        <StyledNavLink3 onClick={() => {handleClick(4)}} className="link" to={"/comment"}><StyledP>Comment</StyledP></StyledNavLink3>
+                        <StyledNavLink2 onClick={() => {handleClick(2)}} className="link" to={"/course"}><StyledP>Course</StyledP></StyledNavLink2>
+                        <StyledNavLink3 onClick={() => {handleClick(3)}} className="link" to={"/progress"}><StyledP>Progress</StyledP></StyledNavLink3>
+                        <StyledNavLink4 onClick={() => {handleClick(4)}} className="link" to={"/comment"}><StyledP>Comment</StyledP></StyledNavLink4>
                         <StyledBorderDivBottom></StyledBorderDivBottom>
                     </StyledNavBar>
                 </StyleContainDiv2>
